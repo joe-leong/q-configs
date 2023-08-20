@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "lerna clean && rm -rf node_modules",
+    "lint": "markdownlint README.MD --fix"
   },
   "keywords": [
     "joe",
