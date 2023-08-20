@@ -1,0 +1,21 @@
+{
+  "name": "q-cli",
+  "version": "0.0.1",
+  "description": "my cli project",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "joe",
+    "q",
+    "cli"
+  ],
+  "author": "Q",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lerna": "^7.1.5"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "q-commitlint-config",
+  "version": "0.0.1",
+  "description": "Git 规范",
+  "author": "joeaaa <zdnf_lgq@163.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "index.js",
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^6.1.0"
+  },
+  "peerDependencies": {
+    "@commitlint/cli": "^17.7.1"
+  }
+}
