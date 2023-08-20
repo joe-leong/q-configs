@@ -7,7 +7,8 @@
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "clean": "lerna clean && rm -rf node_modules",
-    "lint": "markdownlint README.MD --fix"
+    "lint": "markdownlint README.MD --fix",
+    "test": "lerna run test"
   },
   "keywords": [
     "joe",
