@@ -75,6 +75,21 @@ importers:
         specifier: ^9.3.1
         version: 9.3.1(eslint@8.47.0)
 
+  packages/eslint-plugin:
+    devDependencies:
+      eslint:
+        specifier: ^8.47.0
+        version: 8.47.0
+      fs-extra:
+        specifier: ^11.1.1
+        version: 11.1.1
+      jest:
+        specifier: ^29.6.2
+        version: 29.6.2
+      require-all:
+        specifier: ^3.0.0
+        version: 3.0.0
+
   packages/markdownlint-config:
     dependencies:
       markdownlint:
@@ -6873,6 +6888,11 @@ packages:
   /regexpp@3.2.0:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
     engines: {node: '>=8'}
+    dev: true
+
+  /require-all@3.0.0:
+    resolution: {integrity: sha512-jPGN876lc5exWYrMcgZSd7U42P0PmVQzxnQB13fCSzmyGnqQWW4WUz5DosZ/qe24hz+5o9lSvW2epBNZ1xa6Fw==}
+    engines: {node: '>= 0.8'}
     dev: true
 
   /require-directory@2.1.1:

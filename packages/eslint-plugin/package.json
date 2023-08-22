@@ -1,0 +1,35 @@
+{
+  "name": "eslint-plugin",
+  "version": "0.0.1",
+  "description": "自定义eslint插件",
+  "author": "joeaaa <zdnf_lgq@163.com>",
+  "homepage": "https://github.com/joe-leong/q-configs#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "configs/",
+    "rules/",
+    "README.md"
+  ],
+  "keywords": [
+    "eslint",
+    "eslint-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joe-leong/q-configs.git"
+  },
+  "scripts": {
+    "test": "jest --watch",
+    "prepublishOnly": "pnpm run test"
+  },
+  "bugs": {
+    "url": "https://github.com/joe-leong/q-configs/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "fs-extra": "^11.1.1",
+    "jest": "^29.6.2",
+    "require-all": "^3.0.0"
+  }
+}
