@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin",
+  "name": "q-eslint-plugin",
   "version": "0.0.1",
   "description": "自定义eslint插件",
   "author": "joeaaa <zdnf_lgq@163.com>",
