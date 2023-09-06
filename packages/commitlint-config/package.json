@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^6.1.0"
   },
