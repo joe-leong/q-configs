@@ -9,7 +9,8 @@
     "clean": "lerna clean && rm -rf node_modules",
     "lint": "markdownlint README.MD --fix",
     "test": "lerna run test",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "publish:independence": "tsno run scripts/publish.ts"
   },
   "keywords": [
     "joe",
@@ -19,8 +20,11 @@
   "author": "Q",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^14.14.11",
     "husky": "^8.0.3",
-    "lerna": "^7.1.5"
+    "inquirer": "^7.3.3",
+    "lerna": "^7.1.5",
+    "tsno": "^2.0.0"
   },
   "publishConfig": {
     "access": "public",

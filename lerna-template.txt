@@ -1,0 +1,19 @@
+{
+  "command": {
+    "publish": {
+      "npmClient": "npm",
+      "message": "chore(release): publish %s",
+      "registry": "https://registry.npmjs.org"
+    },
+  },
+  "packages": [
+    {{#each packages}}
+      {{#if @last}}
+    "{{this}}"
+      {{else}}
+    "{{this}}",
+      {{/if}}
+    {{/each}}
+    ],
+  "version": "independent"
+}

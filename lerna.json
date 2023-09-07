@@ -6,7 +6,7 @@
       "npmClient": "npm",
       "message": "chore(release): publish %s",
       "registry": "https://registry.npmjs.org"
-    },
-    "packages": ["packages/*"]
-  }
+    }
+  },
+  "packages": ["packages/*"]
 }
