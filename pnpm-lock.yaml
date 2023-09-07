@@ -246,7 +246,7 @@ packages:
       '@babel/traverse': 7.22.10
       '@babel/types': 7.22.10
       convert-source-map: 1.9.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -599,7 +599,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.22.10
       '@babel/types': 7.22.10
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -3051,6 +3051,17 @@ packages:
       ms: 2.1.3
     dev: true
 
+  /debug@4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+
   /debug@4.3.4(supports-color@8.1.1):
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -3062,6 +3073,7 @@ packages:
     dependencies:
       ms: 2.1.2
       supports-color: 8.1.1
+    dev: true
 
   /decamelize-keys@1.1.1:
     resolution: {integrity: sha512-WiPxgEirIV0/eIOMcnFBA3/IJZAZqKnwAwWyvvdi4lsr1WCN22nhdf/3db3DoZcUjTV2SqfzIwNyp6y2xs3nmg==}
@@ -4973,7 +4985,7 @@ packages:
     resolution: {integrity: sha512-n3s8EwkdFIJCG3BPKBYvskgXGoy88ARzvegkitk60NxRdwltLOTaH7CUiMRXvwYorl0Q712iEjcWB+fK/MrWVw==}
     engines: {node: '>=10'}
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       istanbul-lib-coverage: 3.2.0
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -7713,7 +7725,7 @@ packages:
       cosmiconfig: 8.2.0
       css-functions-list: 3.2.0
       css-tree: 2.3.1
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       fast-glob: 3.3.1
       fastest-levenshtein: 1.0.16
       file-entry-cache: 6.0.1
@@ -7764,6 +7776,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       has-flag: 4.0.0
+    dev: true
 
   /supports-hyperlinks@3.0.0:
     resolution: {integrity: sha512-QBDPHyPQDRTy9ku4URNGY5Lah8PAaXs6tAAwp55sL5WCsSW7GIfdf6W5ixfziW+t7wh3GVvHyHHyQ1ESsoRvaA==}

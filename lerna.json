@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "independent",
   "npmClient": "pnpm",
   "command": {
     "publish": {
@@ -7,8 +7,6 @@
       "message": "chore(release): publish %s",
       "registry": "https://registry.npmjs.org"
     },
-    "packages": [
-      "packages/*"
-    ]
+    "packages": ["packages/*"]
   }
 }

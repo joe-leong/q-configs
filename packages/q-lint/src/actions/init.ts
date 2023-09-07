@@ -77,6 +77,7 @@ export default async (options: InitOptions) => {
   const config: Record<string, any> = {};
   const pkgPath = path.resolve(cwd, 'package.json');
   let pkg = fs.readJSONSync(pkgPath);
+  const npm = await npmType;
 
   // 版本检查
   if (!isTest && checkVersionUpdate) {
@@ -124,12 +125,23 @@ export default async (options: InitOptions) => {
     log.success(`Step ${step}. 已完成项目依赖和配置冲突检查处理 🚀`);
   }
 
-  if (!disableNpmInstall) {
-    log.info(`Step ${++step}. 安装依赖`);
-    const npm = await npmType;
-    spawn.sync(npm, ['i', '-D', PKG_NAME], { stdio: 'inherit', cwd });
-    log.success(`Step ${step}. 安装依赖成功 :D`);
-  }
+  log.info(`Step ${++step}. 安装依赖`);
+  spawn.sync('npm', ['i', 'commitlint', '-g'], {
+    stdio: 'inherit',
+  });
+  spawn.sync(
+    npm,
+    ['i', '-D', `${!disableNpmInstall ? PKG_NAME : ''}`, 'husky', 'q-commitlint-config'],
+    {
+      stdio: 'inherit',
+      cwd,
+    },
+  );
+  spawn.sync('npx', ['husky', 'install'], {
+    stdio: 'inherit',
+    cwd,
+  });
+  log.success(`Step ${step}. 安装依赖成功 :D`);
 
   // 更新 pkg.json
   pkg = fs.readJSONSync(pkgPath);
@@ -137,20 +149,25 @@ export default async (options: InitOptions) => {
   if (!pkg.scripts) {
     pkg.scripts = {};
   }
+  pkg.scripts['prepare'] = 'husky install';
   if (!pkg.scripts[`${PKG_NAME}-scan`]) {
     pkg.scripts[`${PKG_NAME}-scan`] = `${PKG_NAME} scan`;
   }
   if (!pkg.scripts[`${PKG_NAME}-fix`]) {
     pkg.scripts[`${PKG_NAME}-fix`] = `${PKG_NAME} fix`;
   }
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
 
   // 配置 commit 卡点
   log.info(`Step ${++step}. 配置 git commit 卡点`);
-  if (!pkg.husky) pkg.husky = {};
-  if (!pkg.husky.hooks) pkg.husky.hooks = {};
-  pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
-  pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
-  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
+  // if (!pkg.husky) pkg.husky = {};
+  // if (!pkg.husky.hooks) pkg.husky.hooks = {};
+  // pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
+  // pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
+  spawn.sync('npx', ['husky', 'add', '.husky/commit-msg', 'q-lint commit-msg-scan'], {
+    stdio: 'inherit',
+    cwd,
+  });
   log.success(`Step ${step}. 配置 git commit 卡点成功 🚀`);
 
   log.info(`Step ${++step}. 写入配置文件`);

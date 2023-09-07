@@ -16,7 +16,7 @@ program
   );
 
 program
-  .command('lint')
+  .command('init')
   .description('一键接入：为项目初始化规约工具和配置，可以根据项目类型和需求进行定制')
   .option('--vscode', '写入.vscode/setting.json配置')
   .action(async (cmd) => {
@@ -35,7 +35,7 @@ program
   .command('commit-msg-scan')
   .description('commit message 检查: git commit 时对 commit message 进行检查')
   .action(() => {
-    const result = spawn.sync('commitlint', ['-E', 'HUSKY_GIT_PARAMS'], { stdio: 'inherit' });
+    const result = spawn.sync('commitlint', ['--edit'], { stdio: 'inherit' });
     if (result.status !== 0) {
       process.exit(result.status);
     }
