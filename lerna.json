@@ -1,4 +1,6 @@
 {
+  "version": "0.0.5",
+  "npmClient": "pnpm",
   "command": {
     "publish": {
       "npmClient": "npm",
@@ -6,6 +8,5 @@
       "registry": "https://registry.npmjs.org"
     }
   },
-  "packages": ["packages/*"],
-  "version": "0.0.1"
+  "packages": ["packages/*"]
 }
