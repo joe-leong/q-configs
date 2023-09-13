@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-q-eslint-config",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "> TODO: description",
   "author": "joeaaa <zdnf_lgq@163.com>",
   "homepage": "https://github.com/joe-leong/q-configs#readme",
@@ -21,8 +21,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
-    "lodash": "^4.17.21",
-    "mocha": "^10.2.0",
     "@babel/eslint-parser": "^7.22.10",
     "@babel/preset-react": "^7.22.5",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
@@ -33,6 +31,8 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-vue": "^9.17.0",
+    "lodash": "^4.17.21",
+    "mocha": "^10.2.0",
     "typescript": "^5.1.6",
     "vue-eslint-parser": "^9.3.1"
   },
