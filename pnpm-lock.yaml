@@ -170,6 +170,9 @@ importers:
       eslint-plugin-vue:
         specifier: ^7.3.0
         version: 7.20.0(eslint@8.49.0)
+      execa:
+        specifier: ^5.0.0
+        version: 5.1.1
       fast-glob:
         specifier: ^3.3.1
         version: 3.3.1
@@ -1216,7 +1219,7 @@ packages:
     engines: {node: ^14.17.0 || >=16.0.0}
     dependencies:
       chalk: 4.1.0
-      execa: 5.0.0
+      execa: 5.1.1
       strong-log-transformer: 2.1.0
     dev: true
 

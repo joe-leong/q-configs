@@ -176,11 +176,11 @@ export default async (options: InitOptions) => {
 
   // 配置 commit 卡点
   log.info(`Step ${++step}. 配置 git commit 卡点`);
-  // if (!pkg.husky) pkg.husky = {};
-  // if (!pkg.husky.hooks) pkg.husky.hooks = {};
-  // pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
-  // pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
-  spawn.sync('npx', ['husky', 'add', '.husky/commit-msg', 'q-lint commit-msg-scan'], {
+  spawn.sync('npx', ['husky', 'add', '.husky/commit-msg', `${PKG_NAME} commit-msg-scan`], {
+    stdio: 'inherit',
+    cwd,
+  });
+  spawn.sync('npx', ['husky', 'add', '.husky/pre-commit', `${PKG_NAME} commit-file-scan`], {
     stdio: 'inherit',
     cwd,
   });
