@@ -1,6 +1,6 @@
 {
   "name": "q-lint",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "> TODO: description",
   "author": "joeaaa <zdnf_lgq@163.com>",
   "homepage": "https://github.com/joe-leong/q-configs#readme",
@@ -41,6 +41,7 @@
     "chalk": "^4.1.0",
     "command-exists": "^1.2.9",
     "commander": "^11.0.0",
+    "commitlint-config-q-commitlint-config": "workspace:^",
     "cross-spawn": "^7.0.3",
     "ejs": "^3.1.9",
     "eslint": "^8.7.0",
@@ -56,7 +57,6 @@
     "markdownlint": "^0.31.0",
     "ora": "^5.1.0",
     "prettier": "^3.0.3",
-    "commitlint-config-q-commitlint-config": "workspace:^",
     "q-markdownlint-config": "workspace:^",
     "q-stylelint-config": "workspace:^",
     "strip-ansi": "^6.0.0",
