@@ -56,7 +56,7 @@
     "markdownlint": "^0.31.0",
     "ora": "^5.1.0",
     "prettier": "^3.0.3",
-    "q-commitlint-config": "workspace:^",
+    "commitlint-config-q-commitlint-config": "workspace:^",
     "q-markdownlint-config": "workspace:^",
     "q-stylelint-config": "workspace:^",
     "strip-ansi": "^6.0.0",
