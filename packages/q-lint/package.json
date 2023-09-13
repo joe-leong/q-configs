@@ -47,7 +47,6 @@
     "cross-spawn": "^7.0.3",
     "ejs": "^3.1.9",
     "eslint": "^8.7.0",
-    "eslint-config-egg": "^10.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-q-eslint-config": "workspace:^",
     "eslint-import-resolver-typescript": "^2.5.0",
