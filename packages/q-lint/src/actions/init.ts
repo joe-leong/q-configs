@@ -133,13 +133,13 @@ export default async (options: InitOptions) => {
     `${!disableNpmInstall ? PKG_NAME : ''}`,
     'husky',
     'commitlint-config-q-commitlint-config',
-    config.enableESLint
-      ? `eslint-config-prettier${
-          config.eslintType.includes('typescript')
-            ? ',@typescript-eslint/parser,@typescript-eslint/eslint-plugin,eslint-plugin-import'
-            : ''
-        }`
-      : '',
+    // config.enableESLint
+    //   ? `eslint-config-prettier${
+    //       config.eslintType.includes('typescript')
+    //         ? ',@typescript-eslint/parser,@typescript-eslint/eslint-plugin,eslint-plugin-import'
+    //         : ''
+    //     }`
+    //   : '',
     // config.eslintType.includes('react') ? 'eslint-plugin-react,eslint-plugin-react-hooks' : '',
     // config.eslintType.includes('vue') ? `eslint-plugin-vue,vue-eslint-parser` : '',
   ]
