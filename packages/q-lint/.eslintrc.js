@@ -1,7 +1,11 @@
 module.exports = {
-  extends: ['q-eslint-config/typescript/node', 'prettier'],
-  rules: {
-    '@typescript-eslint/no-require-imports': 1,
-    'no-console': 0,
+  "extends": ["q-eslint-config/typescript/node", "prettier"],
+  parserOptions: {
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
   },
-};
+  "rules": {
+    "@typescript-eslint/no-require-imports": 1,
+    "no-console": 0
+  }
+}

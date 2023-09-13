@@ -127,16 +127,32 @@ export default async (options: InitOptions) => {
 
   log.info(`Step ${++step}. 安装依赖`);
   spawn.sync('npm', ['i', 'commitlint', '-g'], {
-    stdio: 'inherit',
+    stdio: 'ignore',
   });
-  spawn.sync(
-    npm,
-    ['i', '-D', `${!disableNpmInstall ? PKG_NAME : ''}`, 'husky', 'q-commitlint-config'],
-    {
-      stdio: 'inherit',
-      cwd,
-    },
-  );
+  const willInstallDeps = [
+    `${!disableNpmInstall ? PKG_NAME : ''}`,
+    'husky',
+    'commitlint-config-q-commitlint-config',
+    config.enableESLint
+      ? `eslint-config-prettier${
+          config.eslintType.includes('typescript')
+            ? ',@typescript-eslint/parser,@typescript-eslint/eslint-plugin,eslint-plugin-import'
+            : ''
+        }`
+      : '',
+    // config.eslintType.includes('react') ? 'eslint-plugin-react,eslint-plugin-react-hooks' : '',
+    // config.eslintType.includes('vue') ? `eslint-plugin-vue,vue-eslint-parser` : '',
+  ]
+    .map((e) => e.split(','))
+    .reduce((prev, curr) => {
+      prev.push(...curr);
+      return prev;
+    }, [])
+    .filter((e) => e);
+  spawn.sync(npm, ['i', '-D', ...willInstallDeps], {
+    stdio: 'inherit',
+    cwd,
+  });
   spawn.sync('npx', ['husky', 'install'], {
     stdio: 'inherit',
     cwd,
@@ -149,7 +165,7 @@ export default async (options: InitOptions) => {
   if (!pkg.scripts) {
     pkg.scripts = {};
   }
-  pkg.scripts['prepare'] = 'husky install';
+  pkg.scripts.prepare = 'husky install';
   if (!pkg.scripts[`${PKG_NAME}-scan`]) {
     pkg.scripts[`${PKG_NAME}-scan`] = `${PKG_NAME} scan`;
   }

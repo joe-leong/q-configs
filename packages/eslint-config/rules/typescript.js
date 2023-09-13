@@ -2,7 +2,6 @@
  * 本文件的规则由 @typescript-eslint/eslint-plugin 提供，使用 @typescript-eslint/parser 作为 parser
  * @link https://github.com/typescript-eslint/typescript-eslint
  */
-
 module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],

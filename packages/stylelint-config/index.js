@@ -11,6 +11,7 @@ module.exports = {
     'block-no-empty': null,
     'color-no-invalid-hex': true,
     'comment-no-empty': true,
+    'declaration-block-trailing-semicolon': 'nevrer',
     'declaration-block-no-duplicate-properties': [
       true,
       {

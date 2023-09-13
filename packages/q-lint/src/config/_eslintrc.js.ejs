@@ -1,2 +1,4 @@
-module.exports = { extends: [ '<%= eslintType === 'index' ? 'q-eslint-config' :
-`q-eslint-config/${eslintType}` %>', <%_ if (enablePrettier) { _%> 'prettier', <%_ } _%> ], };
+module.exports = {
+  extends: [ '<%= eslintType === 'index' ? 'q-eslint-config' :
+`q-eslint-config/${eslintType}` %>', <%_ if (enablePrettier) { _%> 'prettier', <%_ } _%> ],
+}
