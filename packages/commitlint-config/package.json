@@ -10,7 +10,9 @@
     "index.js"
   ],
   "dependencies": {
-    "@commitlint/cli": "^17.7.1",
     "conventional-changelog-conventionalcommits": "^6.1.0"
+  },
+  "peerDependencies": {
+    "@commitlint/cli": "^17.7.1"
   }
 }
