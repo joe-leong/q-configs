@@ -27,7 +27,6 @@ export default async (options: ScanOptions): Promise<ScanReport> => {
     try {
       const eslintResults = await doESLint({ ...options, pkg, config });
       results = results.concat(eslintResults);
-      console.log(results);
     } catch (e) {
       runErrors.push(e);
     }
