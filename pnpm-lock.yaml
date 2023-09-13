@@ -194,6 +194,9 @@ importers:
       markdownlint:
         specifier: ^0.31.0
         version: 0.31.0
+      markdownlint-rule-helpers:
+        specifier: ^0.22.0
+        version: 0.22.0
       ora:
         specifier: ^5.1.0
         version: 5.4.1
@@ -267,6 +270,18 @@ importers:
       typescript:
         specifier: ^5.1.6
         version: 5.2.2
+
+  packages/q-lint/test/fixtures/template/temp:
+    devDependencies:
+      commitlint-config-q-commitlint-config:
+        specifier: workspace:^0.0.12
+        version: link:../../../../../commitlint-config
+      husky:
+        specifier: ^8.0.3
+        version: 8.0.3
+      q-lint:
+        specifier: workspace:^
+        version: link:../../../..
 
   packages/stylelint-config:
     dependencies:
@@ -5957,9 +5972,21 @@ packages:
       uc.micro: 1.0.6
     dev: false
 
+  /markdownlint-micromark@0.1.2:
+    resolution: {integrity: sha512-jRxlQg8KpOfM2IbCL9RXM8ZiYWz2rv6DlZAnGv8ASJQpUh6byTBnEsbuMZ6T2/uIgntyf7SKg/mEaEBo1164fQ==}
+    engines: {node: '>=14.18.0'}
+    dev: false
+
   /markdownlint-micromark@0.1.7:
     resolution: {integrity: sha512-BbRPTC72fl5vlSKv37v/xIENSRDYL/7X/XoFzZ740FGEbs9vZerLrIkFRY0rv7slQKxDczToYuMmqQFN61fi4Q==}
     engines: {node: '>=16'}
+    dev: false
+
+  /markdownlint-rule-helpers@0.22.0:
+    resolution: {integrity: sha512-fYZ68UFpMYXeaQ0BC7xkij1iJd57tqfO5koPc92kDegZDoHq692UqSwxpfcf4i+SnL134sLIlBHrOxXnLmfvsQ==}
+    engines: {node: '>=16'}
+    dependencies:
+      markdownlint-micromark: 0.1.2
     dev: false
 
   /markdownlint@0.31.0:

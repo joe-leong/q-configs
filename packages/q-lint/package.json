@@ -64,6 +64,7 @@
     "is-docker": "^2.1.0",
     "lodash": "^4.17.21",
     "markdownlint": "^0.31.0",
+    "markdownlint-rule-helpers": "^0.22.0",
     "ora": "^5.1.0",
     "prettier": "^3.0.3",
     "q-markdownlint-config": "workspace:^",
