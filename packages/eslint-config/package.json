@@ -17,7 +17,8 @@
     "url": "git+https://github.com/joe-leong/q-configs.git"
   },
   "scripts": {
-    "test": "mocha ./__tests__/*.test.js --timeout 5000 --watch"
+    "test": "mocha ./__tests__/*.test.js --timeout 5000",
+    "test:watch": "mocha ./__tests__/*.test.js --timeout 5000 --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",

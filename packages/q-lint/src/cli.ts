@@ -90,6 +90,28 @@ program
   });
 
 program
+  .command('fix')
+  .description('一键修复：自动修复项目的代码规范扫描问题')
+  .option('-i, --include <dirpath>', '指定要进行修复扫描的目录')
+  .option('--no-ignore', '忽略 eslint 的 ignore 配置文件和 ignore 规则')
+  .action(async (cmd) => {
+    await installDepsIfThereNo();
+
+    const checking = ora();
+    checking.start(`执行 ${PKG_NAME} 代码修复`);
+
+    const { results } = await scan({
+      cwd,
+      fix: true,
+      include: cmd.include || cwd,
+      ignore: cmd.ignore, // 对应 --no-ignore
+    });
+
+    checking.succeed();
+    if (results.length > 0) printReport(results, true);
+  });
+
+program
   .command('commit-msg-scan')
   .description('commit message 检查: git commit 时对 commit message 进行检查')
   .option('-s, --strict', '严格模式，对 warn 和 error 问题都卡口，默认仅对 error 问题卡口')
