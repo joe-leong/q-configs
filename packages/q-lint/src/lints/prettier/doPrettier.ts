@@ -5,12 +5,12 @@ import fg from 'fast-glob';
 import { readFile, writeFile } from 'fs-extra';
 import prettier from 'prettier';
 
-export interface DoPrettierOptions extends ScanOptions {}
+export type DoPrettierOptions = ScanOptions;
 
 async function formatFile(filePath: string) {
   const text = await readFile(filePath, 'utf-8');
   const options = await prettier.resolveConfig(filePath);
-  const formatted = prettier.format(text, { ...options, filepath: filePath });
+  const formatted = await prettier.format(text, { ...options, filepath: filePath });
   await writeFile(filePath, formatted, 'utf8');
 }
 

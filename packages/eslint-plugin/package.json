@@ -20,7 +20,8 @@
     "url": "git+https://github.com/joe-leong/q-configs.git"
   },
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "prepublishOnly": "pnpm run test"
   },
   "bugs": {
